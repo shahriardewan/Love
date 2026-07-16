@@ -1,1 +1,29 @@
-body{margin:0;overflow:hidden;background:pink;display:flex;justify-content:center;align-items:center;height:100vh}.card{background:#fff;padding:20px;border-radius:16px}.f{position:fixed;top:-20px;animation:fall linear forwards}@keyframes fall{to{transform:translateY(110vh)}}#no{position:absolute}
+const effects = document.getElementById("effects");
+
+function createEffect() {
+
+    const item = document.createElement("div");
+
+    if(Math.random() > 0.5){
+        item.innerHTML = "💖";
+    }else{
+        item.innerHTML = "✨";
+    }
+
+    item.className = "item";
+
+    item.style.left = Math.random() * 100 + "vw";
+
+    item.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    item.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    effects.appendChild(item);
+
+    setTimeout(()=>{
+        item.remove();
+    },8000);
+
+}
+
+setInterval(createEffect,150);
