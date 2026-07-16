@@ -1,29 +1,8 @@
-const effects = document.getElementById("effects");
-
-function createEffect() {
-
-    const item = document.createElement("div");
-
-    if(Math.random() > 0.5){
-        item.innerHTML = "💖";
-    }else{
-        item.innerHTML = "✨";
-    }
-
-    item.className = "item";
-
-    item.style.left = Math.random() * 100 + "vw";
-
-    item.style.fontSize = (15 + Math.random() * 20) + "px";
-
-    item.style.animationDuration = (4 + Math.random() * 4) + "s";
-
-    effects.appendChild(item);
-
-    setTimeout(()=>{
-        item.remove();
-    },8000);
-
+body{
+    overflow:hidden;
 }
 
-setInterval(createEffect,150);
+.card{
+    position:relative;
+    z-index:10;
+}
