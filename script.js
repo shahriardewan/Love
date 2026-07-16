@@ -1,1 +1,28 @@
-no.onmouseover=()=>{no.style.left=Math.random()*90+'vw';no.style.top=Math.random()*90+'vh'};yes.onclick=()=>msg.innerHTML='❤️ I Love You Forever';function m(t){let d=document.createElement('div');d.className='f';d.textContent=t;d.style.left=Math.random()*100+'vw';d.style.animationDuration=(4+Math.random()*3)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),7000)};setInterval(()=>m('❤️'),200);setInterval(()=>m('⭐'),350);
+#effects{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.item{
+    position:absolute;
+    top:-50px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0.8;
+    }
+}
